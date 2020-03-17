@@ -10,3 +10,19 @@ header {
 section {
   padding: 150px 0;
 }
+
+body {
+    color: #fff;
+    background-color: #212529;
+}
+
+.bg-primary {
+    background-color: #69b38f !important;
+}
+
+.bd-navbar .navbar-nav-svg {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-top;
+}
