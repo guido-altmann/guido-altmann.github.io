@@ -16,6 +16,10 @@ body {
     background-color: #212529;
 }
 
+a {
+  color: white;
+ }
+
 .bg-primary {
     background-color: #69b38f !important;
 }
