@@ -1,34 +1,100 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Software-Entwickler & Software-Architekt, Freelancer, C#, .NET, Backend, Frontend, Web-Development, Berlin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guido Altmann - Senior Software-Entwickler & Software-Architekt in Berlin. Spezialist für .NET, C#, ASP.NET Core, Blazor und moderne Web-Entwicklung. Freelancer mit 30+ Jahren Erfahrung.">
   <meta name="author" content="Guido Altmann">
+  <meta name="keywords" content="Software-Entwickler, Software-Architekt, .NET, C#, ASP.NET Core, Blazor, Freelancer, Berlin, Web-Development, Backend, Frontend">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://guido-altmann.github.io/">
+  <meta property="og:title" content="Guido Altmann - Software-Entwickler & Software-Architekt | Freelancer">
+  <meta property="og:description" content="Senior Software-Entwickler & Software-Architekt in Berlin. Spezialist für .NET, C#, ASP.NET Core, Blazor und moderne Web-Entwicklung.">
+  <meta property="og:image" content="https://guido-altmann.github.io/img/Foto_quadrat.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://guido-altmann.github.io/">
+  <meta property="twitter:title" content="Guido Altmann - Software-Entwickler & Software-Architekt | Freelancer">
+  <meta property="twitter:description" content="Senior Software-Entwickler & Software-Architekt in Berlin. Spezialist für .NET, C#, ASP.NET Core, Blazor und moderne Web-Entwicklung.">
+  <meta property="twitter:image" content="https://guido-altmann.github.io/img/Foto_quadrat.jpg">
 
   <title>Guido Altmann - Software-Entwickler & Software-Architekt | Freelancer</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Guido Altmann",
+    "jobTitle": "Software-Entwickler & Software-Architekt",
+    "description": "Senior Software-Entwickler & Software-Architekt in Berlin. Spezialist für .NET, C#, ASP.NET Core, Blazor und moderne Web-Entwicklung.",
+    "url": "https://guido-altmann.github.io",
+    "image": "https://guido-altmann.github.io/img/Foto_quadrat.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Drewitzer Str. 50",
+      "addressLocality": "Berlin",
+      "postalCode": "13467",
+      "addressCountry": "DE"
+    },
+    "email": "mail@guido-altmann.de",
+    "telephone": "030 70079980",
+    "knowsAbout": [
+      "C#",
+      ".NET Framework",
+      ".NET Core",
+      "ASP.NET Core",
+      "Blazor",
+      "Software Architecture",
+      "Web Development",
+      "Backend Development",
+      "Frontend Development"
+    ],
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software-Entwickler & Software-Architekt",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Berlin"
+      }
+    },
+    "sameAs": [
+      "https://github.com/guido-altmann",
+      "https://www.linkedin.com/in/guido-altmann",
+      "https://www.freelancermap.de/profil/senior-net-entwickler-architekt-296189"
+    ]
+  }
+  </script>
 
 </head>
 
 <body id="page-top">
 
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="visually-hidden-focusable btn btn-primary position-absolute" style="top: 10px; left: 10px; z-index: 9999;">Zum Hauptinhalt springen</a>
+
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bd-navbar bg-dark flex-column flex-md-row fixed-top" id="mainNav">
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Guido Altmann</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="#about">Über mich</a>
               </li>
@@ -59,17 +125,18 @@
     </div>
   </nav>
 
-  <header class="bg-primary text-white">
-      <div class="container text-center">
-          <img src="img/Logo2_cut_orig.png" alt="Guido Altmann" width="90%" height="90%" />
-      </div>
-  </header>
+  <main id="main-content">
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <img src="img/Logo2_cut_orig.png" alt="Guido Altmann - Software-Entwickler & Software-Architekt" width="90%" height="90%" loading="eager" />
+        </div>
+    </header>
 
-  <section id="about">
+    <section id="about" aria-labelledby="about-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2>Über mich</h2>
+          <h2 id="about-heading">Über mich</h2>
           <p class="lead">
               Ich bin Softwareentwickler und -architekt in Berlin. In über dreißig Jahren habe ich weitreichende Erfahrungen in der Softwareentwicklung gesammelt 
               und dabei leidenschaftlich leistungsstarke, zuverlässige, skalierbare und wartbare Anwendungen für Unternehmen entwickelt. 
@@ -86,11 +153,11 @@
     </div>
   </section>
 
-  <section id="services" class="bg-secondary">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Dienstleistungen</h2>
+    <section id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 id="services-heading">Dienstleistungen</h2>
           <h5>Softwareentwicklung & Architektur mit Fokus auf .NET-Technologien</h2>
           <p class="lead">
             Ich biete maßgeschneiderte Softwarelösungen auf Basis von Microsoft .NET – von der Konzeption über die Entwicklung bis hin zur nachhaltigen Weiterentwicklung.
@@ -113,13 +180,13 @@
     </div>
   </section>
 
-  <section id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Kontakt</h2>
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2 id="contact-heading">Kontakt</h2>
           <div class="container text-center" style="padding-top: 40px; padding-bottom: 40px;">
-            <img src="img/Foto_quadrat.jpg" alt="Guido Altmann" width="40%" style="border-radius: 50%; display: block; margin: 0 auto;">
+            <img src="img/Foto_quadrat.jpg" alt="Guido Altmann - Portrait" width="40%" height="auto" style="border-radius: 50%; display: block; margin: 0 auto;" loading="lazy">
           </div>
           <p class="lead">
               Wenn Sie mit mir in Kontakt treten möchten, können Sie mich per E-Mail an <a href="mailto:mail@guido-altmann.de">mail@guido-altmann.de</a> erreichen,
@@ -140,7 +207,7 @@
                 <defs>
                     <style>
                         .logo-white-cls-1 {
-                            fill: #fff;
+                            fill: #000000;
                         }
             
                         .logo-white-cls-1, .logo-white-cls-2 {
@@ -166,7 +233,8 @@
         </div>
       </div>
     </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
@@ -179,12 +247,8 @@
     <!-- /.container -->
   </footer>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap 5 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
   <!-- Custom JavaScript for this theme -->
   <script src="js/scrolling-nav.js"></script>
