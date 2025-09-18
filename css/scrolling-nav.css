@@ -10,6 +10,9 @@
   --secondary-color: #6c757d;
   --dark-color: #212529;
   --light-color: #f8f9fa;
+  --page-bg: #ffffff;
+  --surface-bg: #ffffff;
+  --services-bg: #f5f7f6;
   --text-color: #333;
   --text-light: #666;
   --white: #ffffff;
@@ -34,6 +37,9 @@
     --text-color: #e9ecef;
     --text-light: #adb5bd;
     --light-color: #343a40;
+    --page-bg: #121416;
+    --surface-bg: #1b1f23;
+    --services-bg: #2b3035;
   }
 }
 
@@ -43,7 +49,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--text-color);
-  background-color: var(--white);
+  background-color: var(--page-bg);
   scroll-behavior: smooth;
 }
 
@@ -109,7 +115,7 @@ section h2::after {
 
 /* About Section */
 #about {
-  background-color: var(--white);
+  background-color: var(--surface-bg);
 }
 
 #about .lead {
@@ -144,7 +150,7 @@ section h2::after {
 
 /* Services Section */
 #services {
-  background-color: var(--light-color);
+  background-color: var(--services-bg);
 }
 
 #services h5 {
@@ -153,10 +159,16 @@ section h2::after {
   margin-bottom: 1rem;
 }
 
+#services ul {
+  list-style: none;
+  padding: 0;
+}
+
 #services ul li {
-  margin-bottom: 1rem;
-  padding-left: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
   position: relative;
+  padding-left: 1.5rem;
 }
 
 #services ul li::before {
@@ -167,9 +179,13 @@ section h2::after {
   font-weight: bold;
 }
 
+#services ul li:last-child {
+  border-bottom: none;
+}
+
 /* Contact Section */
 #contact {
-  background-color: var(--white);
+  background-color: var(--surface-bg);
 }
 
 #contact img {
