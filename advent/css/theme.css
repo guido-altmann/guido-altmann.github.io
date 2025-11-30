@@ -1,0 +1,87 @@
+/* Christmas Color Palette */
+:root {
+    --christmas-red: #c41e3a;
+    --christmas-green: #165b33;
+    --christmas-gold: #d4af37;
+    --christmas-white: #f0f8ff;
+    --snow-white: #ffffff;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(90deg,
+        var(--christmas-red) 0%,
+        var(--christmas-green) 50%,
+        var(--christmas-red) 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Snow Animation Container */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: var(--snow-white);
+    font-size: 1rem;
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--christmas-green);
+    color: var(--christmas-white);
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    header {
+        padding: 1.5rem 0.5rem;
+    }
+}

@@ -1,0 +1,28 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 3: LINQ-Magie für die Feiertage</h2>
+        <span class="day-badge">🎄 3. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Wussten Sie, dass LINQ-Queries oft lesbarer sind als klassische Loops? Hier ein Beispiel für Geschenk-Filterung:</p>
+
+        <h3>📝 Code-Beispiel</h3>
+        <pre class="line-numbers"><code class="language-csharp">var teureGeschenke = geschenke
+    .Where(g => g.Preis > 50)
+    .OrderByDescending(g => g.Beliebtheit)
+    .Take(5);</code></pre>
+
+        <h3>💡 Best Practice</h3>
+        <p>Nutzen Sie <code>Any()</code> statt <code>Count() > 0</code> für bessere Performance bei großen Collections!</p>
+
+        <details>
+            <summary>🔍 Warum ist Any() schneller?</summary>
+            <p><code>Any()</code> stoppt nach dem ersten gefundenen Element, während <code>Count()</code> die gesamte Collection durchlaufen muss. Bei großen Datenmengen kann das einen erheblichen Unterschied machen!</p>
+        </details>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Kombinieren Sie LINQ mit Method Chaining für extrem lesbaren Code!</p>
+    </div>
+</div>

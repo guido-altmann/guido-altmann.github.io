@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 12: SQL-Weihnachtsabfrage</h2>
+        <span class="day-badge">🎄 12. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Finden Sie die beliebtesten Geschenke:</p>
+
+        <h3>📝 SQL-Abfrage</h3>
+        <pre class="line-numbers"><code class="language-sql">SELECT TOP 5 Produktname, COUNT(*) AS Verkauft
+FROM Bestellungen b
+JOIN BestellPositionen bp ON b.Id = bp.BestellungId
+WHERE b.Bestelldatum >= '2024-12-01'
+GROUP BY Produktname
+ORDER BY Verkauft DESC;</code></pre>
+
+        <h3>💡 Was passiert hier?</h3>
+        <ol>
+            <li>JOIN verbindet Bestellungen mit Positionen</li>
+            <li>WHERE filtert auf Dezember-Bestellungen</li>
+            <li>GROUP BY gruppiert nach Produktname</li>
+            <li>COUNT zählt die Verkäufe pro Produkt</li>
+            <li>ORDER BY sortiert absteigend</li>
+            <li>TOP 5 limitiert auf die ersten 5 Ergebnisse</li>
+        </ol>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Performance-Tipp:</strong> Indexieren Sie Datumsspalten für schnellere Abfragen!</p>
+    </div>
+</div>

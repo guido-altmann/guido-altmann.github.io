@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 13: Async/Await Best Practice</h2>
+        <span class="day-badge">🎄 13. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Vermeiden Sie <code>async void</code> außer bei Event Handlers:</p>
+
+        <h3>❌ Schlecht</h3>
+        <pre class="line-numbers"><code class="language-csharp">async void LadeGeschenke() { }</code></pre>
+
+        <h3>✅ Gut</h3>
+        <pre class="line-numbers"><code class="language-csharp">async Task LadeGeschenkeAsync() { }</code></pre>
+
+        <h3>💡 Warum?</h3>
+        <p><code>async void</code> Methoden haben drei Probleme:</p>
+        <ul>
+            <li>Exceptions können nicht abgefangen werden</li>
+            <li>Keine Möglichkeit auf Completion zu warten</li>
+            <li>Schwer zu testen</li>
+        </ul>
+
+        <h3>📝 Ausnahme: Event Handler</h3>
+        <pre class="line-numbers"><code class="language-csharp">private async void Button_Click(object sender, EventArgs e)
+{
+    await LadeGeschenkeAsync();
+}</code></pre>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Merkhilfe:</strong> Async-Methoden sollten immer <code>Task</code> oder <code>Task&lt;T&gt;</code> zurückgeben – wie ein verpacktes Geschenk!</p>
+    </div>
+</div>

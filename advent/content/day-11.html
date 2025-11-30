@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 11: SOLID - Single Responsibility</h2>
+        <span class="day-badge">🎄 11. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Eine Klasse sollte nur einen Grund zur Änderung haben.</p>
+
+        <h3>❌ Schlecht</h3>
+        <pre class="line-numbers"><code class="language-csharp">class Weihnachtsmann {
+    void GeschenkeVerteilen() { }
+    void SchornsteinReinigen() { } // Nicht seine Aufgabe!
+}</code></pre>
+
+        <h3>✅ Besser</h3>
+        <p>Trennen Sie Verantwortlichkeiten in <code>GeschenkService</code> und <code>SchornsteinfegerService</code>.</p>
+
+        <pre class="line-numbers"><code class="language-csharp">class GeschenkService {
+    void VerteileGeschenke() { }
+}
+
+class SchornsteinfegerService {
+    void ReinigeSchornstein() { }
+}</code></pre>
+
+        <h3>💡 Warum ist das wichtig?</h3>
+        <p>Wenn sich die Geschenk-Logik ändert, müssen Sie nicht die Schornstein-Klasse anfassen. Jede Klasse hat eine klar definierte Aufgabe.</p>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Wenn Sie Schwierigkeiten haben, eine Klasse zu benennen, macht sie wahrscheinlich zu viel!</p>
+    </div>
+</div>

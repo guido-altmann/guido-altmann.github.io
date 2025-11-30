@@ -1,0 +1,30 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 15: C# Record Types</h2>
+        <span class="day-badge">🎄 15. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Für unveränderliche Daten (wie Geschenklisten!) nutzen Sie Records:</p>
+
+        <h3>📝 Code-Beispiel</h3>
+        <pre class="line-numbers"><code class="language-csharp">public record Geschenk(string Name, decimal Preis, string Empfaenger);
+
+var geschenk = new Geschenk("Buch", 19.99m, "Anna");</code></pre>
+
+        <h3>💡 Vorteile von Records</h3>
+        <ul>
+            <li><strong>Immutability:</strong> Werte können nach Erstellung nicht geändert werden</li>
+            <li><strong>Value Equality:</strong> Vergleich basiert auf Werten, nicht Referenzen</li>
+            <li><strong>Kompakte Syntax:</strong> Weniger Boilerplate-Code</li>
+            <li><strong>With-Expressions:</strong> Einfaches Erstellen von Kopien mit geänderten Werten</li>
+        </ul>
+
+        <h3>📝 With-Expression</h3>
+        <pre class="line-numbers"><code class="language-csharp">var teurereBuch = geschenk with { Preis = 29.99m };</code></pre>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Records sind perfekt für DTOs und Value Objects!</p>
+    </div>
+</div>

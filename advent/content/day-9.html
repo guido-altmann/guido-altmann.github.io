@@ -1,0 +1,30 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 9: ASP.NET Core - Dependency Injection</h2>
+        <span class="day-badge">🎄 9. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">DI ist das Geschenk, das immer passt!</p>
+
+        <h3>❌ Tight Coupling</h3>
+        <pre class="line-numbers"><code class="language-csharp">var service = new MeinService(); // Nicht gut!</code></pre>
+
+        <h3>✅ Mit Dependency Injection</h3>
+        <pre class="line-numbers"><code class="language-csharp">builder.Services.AddScoped&lt;IMeinService, MeinService&gt;();</code></pre>
+
+        <h3>💡 Weihnachts-Pattern</h3>
+        <p>Registrieren Sie Services mit Interfaces – so bleiben Sie flexibel beim "Auspacken"!</p>
+
+        <h3>📝 Service-Lifetimes</h3>
+        <ul>
+            <li><strong>Transient:</strong> Neue Instanz bei jeder Anforderung</li>
+            <li><strong>Scoped:</strong> Eine Instanz pro HTTP-Request</li>
+            <li><strong>Singleton:</strong> Eine Instanz für die gesamte Anwendung</li>
+        </ul>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Nutzen Sie <code>AddScoped</code> für Entity Framework DbContext!</p>
+    </div>
+</div>

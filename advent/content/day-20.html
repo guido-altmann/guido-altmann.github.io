@@ -1,0 +1,39 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 20: Repository Pattern</h2>
+        <span class="day-badge">🎄 20. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Trennen Sie Datenzugriff von Business-Logik:</p>
+
+        <h3>📝 Interface-Definition</h3>
+        <pre class="line-numbers"><code class="language-csharp">public interface IGeschenkRepository {
+    Task&lt;IEnumerable&lt;Geschenk&gt;&gt; GetAlleAsync();
+    Task&lt;Geschenk?&gt; GetByIdAsync(int id);
+    Task AddAsync(Geschenk geschenk);
+    Task UpdateAsync(Geschenk geschenk);
+    Task DeleteAsync(int id);
+}</code></pre>
+
+        <h3>💡 Implementierung</h3>
+        <pre class="line-numbers"><code class="language-csharp">public class GeschenkRepository : IGeschenkRepository {
+    private readonly DbContext _context;
+
+    public GeschenkRepository(DbContext context) {
+        _context = context;
+    }
+
+    public async Task&lt;IEnumerable&lt;Geschenk&gt;&gt; GetAlleAsync() {
+        return await _context.Geschenke.ToListAsync();
+    }
+}</code></pre>
+
+        <h3>🎄 Weihnachts-Vorteil</h3>
+        <p>Einfach testbar mit Mock-Repositories – keine echte Datenbank nötig!</p>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Registrieren Sie das Repository im DI-Container mit <code>AddScoped</code>!</p>
+    </div>
+</div>

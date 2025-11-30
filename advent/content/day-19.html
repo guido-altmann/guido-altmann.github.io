@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 19: Blazor Component Parameter</h2>
+        <span class="day-badge">🎄 19. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Wiederverwendbare Komponenten mit Parameters:</p>
+
+        <h3>📝 Komponenten-Definition</h3>
+        <pre class="line-numbers"><code class="language-csharp">@code {
+    [Parameter]
+    public string Nachricht { get; set; } = "Frohe Weihnachten!";
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+}</code></pre>
+
+        <h3>💡 Verwendung</h3>
+        <pre class="line-numbers"><code class="language-markup">&lt;WeihnachtsKarte Nachricht="Schöne Feiertage!"&gt;
+    &lt;p&gt;Ihr Entwickler-Team&lt;/p&gt;
+&lt;/WeihnachtsKarte&gt;</code></pre>
+
+        <h3>🎁 Parameter-Typen</h3>
+        <ul>
+            <li><strong>Einfache Werte:</strong> string, int, bool, etc.</li>
+            <li><strong>RenderFragment:</strong> Für verschachtelten HTML-Content</li>
+            <li><strong>EventCallback:</strong> Für Events an Parent-Komponente</li>
+            <li><strong>CascadingParameter:</strong> Für hierarchische Daten</li>
+        </ul>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Nutzen Sie <code>[EditorRequired]</code> für Pflichtparameter!</p>
+    </div>
+</div>

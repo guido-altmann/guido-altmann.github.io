@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 18: LINQ GroupBy für Statistiken</h2>
+        <span class="day-badge">🎄 18. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Gruppieren Sie Bestellungen nach Kategorie:</p>
+
+        <h3>📝 Code-Beispiel</h3>
+        <pre class="line-numbers"><code class="language-csharp">var statistik = bestellungen
+    .GroupBy(b => b.Kategorie)
+    .Select(g => new {
+        Kategorie = g.Key,
+        Anzahl = g.Count(),
+        Gesamtwert = g.Sum(b => b.Betrag)
+    });</code></pre>
+
+        <h3>💡 Was passiert hier?</h3>
+        <ol>
+            <li><code>GroupBy</code> erstellt Gruppen nach Kategorie</li>
+            <li><code>g.Key</code> ist der Gruppierungsschlüssel (Kategorie)</li>
+            <li><code>g.Count()</code> zählt Elemente in der Gruppe</li>
+            <li><code>g.Sum()</code> summiert Beträge der Gruppe</li>
+        </ol>
+
+        <h3>🎄 Perfekt für Jahresend-Reports!</h3>
+        <p>Diese Technik eignet sich hervorragend für Auswertungen und Statistiken.</p>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Kombinieren Sie <code>GroupBy</code> mit <code>OrderByDescending</code> für Top-Listen!</p>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 7: Clean Code - Namensgebung</h2>
+        <span class="day-badge">🎄 7. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Gute Namensgebung ist der Schlüssel zu wartbarem Code!</p>
+
+        <h3>❌ Schlechter Code zu Weihnachten</h3>
+        <pre class="line-numbers"><code class="language-csharp">var x = GetData(); // Was für Daten?</code></pre>
+
+        <h3>✅ Guter Code</h3>
+        <pre class="line-numbers"><code class="language-csharp">var weihnachtsbestellungen = GetBestellungenImDezember();</code></pre>
+
+        <h3>💡 Die goldene Regel</h3>
+        <p><strong>Namen sollten die Intention ausdrücken, nicht die Implementierung.</strong> <code>BerechneRabatt()</code> ist besser als <code>Methode5()</code>.</p>
+
+        <div class="challenge-box">
+            <h4>🎯 Challenge</h4>
+            <p>Überprüfen Sie Ihren aktuellen Code: Gibt es Variablen wie <code>x</code>, <code>temp</code> oder <code>data</code>, die besser benannt werden sollten?</p>
+        </div>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Ein guter Name macht Kommentare oft überflüssig!</p>
+    </div>
+</div>

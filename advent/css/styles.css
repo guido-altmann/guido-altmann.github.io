@@ -1,0 +1,183 @@
+/* Core Layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    position: relative;
+    z-index: 10;
+}
+
+/* Main Container */
+.calendar-container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+}
+
+/* Door Base Styles */
+.door {
+    aspect-ratio: 1;
+    perspective: 1000px;
+    cursor: pointer;
+    position: relative;
+}
+
+.door-front,
+.door-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.door-front {
+    background: linear-gradient(145deg, #6b6b6b, #4a4a4a);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3),
+                inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    border: 3px solid #8b7355;
+    opacity: 0.7;
+}
+
+.door-back {
+    background: linear-gradient(145deg, #165b33, #0f3d22);
+    transform: rotateY(180deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.door-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 10px;
+}
+
+.door-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d4af37;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.door-decoration {
+    font-size: 5rem;
+    position: relative;
+}
+
+/* Door States */
+.door[data-state="locked"] {
+    cursor: not-allowed;
+}
+
+.door[data-state="locked"] .door-front::after {
+    content: '🔒';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+}
+
+.door[data-state="opened"] .door-front {
+    transform: rotateY(180deg);
+}
+
+.door[data-state="opened"] .door-back {
+    transform: rotateY(0deg);
+}
+
+.door[data-state="unlocked"]:hover .door-front {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(212, 175, 55, 0.4);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: 0.8rem;
+        padding: 1rem;
+    }
+
+    .door-number {
+        font-size: 1.5rem;
+    }
+
+    .door-label {
+        font-size: 1.2rem;
+    }
+
+    .door-decoration {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .door-number {
+        font-size: 1.2rem;
+        bottom: 5px;
+    }
+
+    .door-label {
+        font-size: 1rem;
+    }
+
+    .door-decoration {
+        font-size: 2.5rem;
+    }
+
+    .door[data-state="locked"] .door-front::after {
+        font-size: 1.2rem;
+        top: 5px;
+        right: 5px;
+    }
+}

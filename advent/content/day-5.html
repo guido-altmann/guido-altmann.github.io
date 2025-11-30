@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 5: Entity Framework Performance-Tipp</h2>
+        <span class="day-badge">🎄 5. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Beim Laden von verwandten Daten gibt es drei Strategien:</p>
+
+        <h3>💡 Loading-Strategien</h3>
+        <ul>
+            <li><strong>Eager Loading:</strong> <code>.Include(o => o.Details)</code> - lädt alles sofort</li>
+            <li><strong>Lazy Loading:</strong> Daten werden bei Bedarf geladen (Achtung: N+1 Problem!)</li>
+            <li><strong>Explicit Loading:</strong> Manuelles Nachladen mit <code>.Collection().Load()</code></li>
+        </ul>
+
+        <h3>🎄 Weihnachtstipp</h3>
+        <p>Für große Datenmengen nutzen Sie <code>AsNoTracking()</code> beim Lesen – bis zu 30% schneller!</p>
+
+        <pre class="line-numbers"><code class="language-csharp">var bestellungen = await context.Bestellungen
+    .AsNoTracking()
+    .Where(b => b.Datum.Month == 12)
+    .ToListAsync();</code></pre>
+
+        <details>
+            <summary>🔍 Warum ist AsNoTracking() schneller?</summary>
+            <p>Entity Framework tracked normalerweise alle geladenen Entitäten für Change Detection. Bei reinen Leseoperationen ist das unnötig und kostet Performance. <code>AsNoTracking()</code> deaktiviert dieses Tracking.</p>
+        </details>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Nutzen Sie Eager Loading mit <code>Include()</code> um das N+1 Problem zu vermeiden!</p>
+    </div>
+</div>

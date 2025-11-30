@@ -1,0 +1,24 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 4: SQL-Adventsrätsel</h2>
+        <span class="day-badge">🎄 4. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro"><strong>Frage:</strong> Wie würden Sie in SQL alle Bestellungen finden, die im Dezember aufgegeben wurden und mehr als 3 Artikel enthalten?</p>
+
+        <details>
+            <summary>🔍 Lösung anzeigen</summary>
+            <h3>📝 SQL-Abfrage</h3>
+            <pre class="line-numbers"><code class="language-sql">SELECT * FROM Bestellungen
+WHERE MONTH(Bestelldatum) = 12
+AND ArtikelAnzahl > 3;</code></pre>
+
+            <p>Diese Abfrage filtert alle Bestellungen, die im Dezember (Monat 12) aufgegeben wurden und mehr als 3 Artikel enthalten.</p>
+        </details>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Für bessere Performance sollten Sie auf die Bestelldatum-Spalte einen Index setzen!</p>
+    </div>
+</div>

@@ -1,0 +1,249 @@
+/* Prism.js Custom Theme - Christmas Edition */
+
+/* Override Prism Tomorrow theme for Christmas colors */
+code[class*="language-"],
+pre[class*="language-"] {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Andale Mono', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 4;
+    hyphens: none;
+}
+
+/* Code block container */
+pre[class*="language-"] {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow: auto;
+    border-radius: 8px;
+    background: #1e1e1e;
+    border-left: 4px solid #d4af37;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    background: #f5f5f5;
+    color: #c7254e;
+}
+
+/* Syntax highlighting colors */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #7c7c7c;
+    font-style: italic;
+}
+
+.token.punctuation {
+    color: #d4d4d4;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #b5cea8;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #ce9178;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #d4d4d4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #569cd6;
+}
+
+.token.function,
+.token.class-name {
+    color: #dcdcaa;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #d16969;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+/* Line numbers plugin styling */
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.5rem;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.5rem;
+    width: 3rem;
+    letter-spacing: -1px;
+    border-right: 1px solid #444;
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+    content: counter(linenumber);
+    color: #666;
+    display: block;
+    padding-right: 0.8rem;
+    text-align: right;
+}
+
+/* Christmas theme accents */
+pre[class*="language-"]::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    color: #d4af37;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+}
+
+pre[class*="language-csharp"]::before {
+    content: 'C#';
+}
+
+pre[class*="language-sql"]::before {
+    content: 'SQL';
+}
+
+pre[class*="language-markup"]::before,
+pre[class*="language-html"]::before {
+    content: 'HTML';
+}
+
+pre[class*="language-css"]::before {
+    content: 'CSS';
+}
+
+pre[class*="language-javascript"]::before,
+pre[class*="language-js"]::before {
+    content: 'JS';
+}
+
+/* Scrollbar styling for code blocks */
+pre[class*="language-"]::-webkit-scrollbar {
+    height: 8px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: #165b33;
+    border-radius: 4px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: #0f3d22;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        font-size: 14px;
+    }
+
+    pre[class*="language-"] {
+        padding: 1rem;
+    }
+
+    pre[class*="language-"].line-numbers {
+        padding-left: 2.8rem;
+    }
+
+    .line-numbers .line-numbers-rows {
+        left: -2.8rem;
+        width: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        font-size: 13px;
+    }
+
+    pre[class*="language-"] {
+        padding: 0.75rem;
+        border-radius: 6px;
+    }
+
+    pre[class*="language-"]::before {
+        font-size: 0.65rem;
+        top: 0.4rem;
+        right: 0.4rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    pre[class*="language-"] {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    pre[class*="language-"]::before {
+        display: none;
+    }
+
+    .line-numbers .line-numbers-rows {
+        border-right-color: #999;
+    }
+}

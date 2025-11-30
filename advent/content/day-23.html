@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 23: Blazor LocalStorage</h2>
+        <span class="day-badge">🎄 23. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Speichern Sie Wunschlisten lokal:</p>
+
+        <h3>📦 Package installieren</h3>
+        <pre class="line-numbers"><code class="language-markup">Blazored.LocalStorage</code></pre>
+
+        <h3>📝 Code-Beispiel</h3>
+        <pre class="line-numbers"><code class="language-csharp">@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+await localStorage.SetItemAsync("wunschliste", meineGeschenke);
+var geladen = await localStorage.GetItemAsync&lt;List&lt;Geschenk&gt;&gt;("wunschliste");</code></pre>
+
+        <h3>💡 Registrierung</h3>
+        <pre class="line-numbers"><code class="language-csharp">builder.Services.AddBlazoredLocalStorage();</code></pre>
+
+        <h3>🎁 Vorteile</h3>
+        <ul>
+            <li>Daten bleiben nach Browser-Neustart erhalten</li>
+            <li>Keine Server-Roundtrips nötig</li>
+            <li>Einfache API</li>
+            <li>Typsicher mit Generics</li>
+        </ul>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> LocalStorage hat ein Limit von ~5-10 MB. Für größere Daten nutzen Sie IndexedDB!</p>
+    </div>
+</div>

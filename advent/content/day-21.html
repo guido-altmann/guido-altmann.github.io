@@ -1,0 +1,31 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 21: MudBlazor Theme-Switching</h2>
+        <span class="day-badge">🎄 21. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Dunkler Modus für lange Winterabende:</p>
+
+        <h3>📝 Code-Beispiel</h3>
+        <pre class="line-numbers"><code class="language-markup">&lt;MudThemeProvider @bind-IsDarkMode="@_isDarkMode" /&gt;
+
+@code {
+    private bool _isDarkMode = true;
+}</code></pre>
+
+        <h3>🎨 Toggle-Button hinzufügen</h3>
+        <pre class="line-numbers"><code class="language-markup">&lt;MudIconButton Icon="@Icons.Material.Filled.Brightness4"
+               OnClick="@(() => _isDarkMode = !_isDarkMode)" /&gt;</code></pre>
+
+        <h3>💡 LocalStorage-Persistenz</h3>
+        <p>Speichern Sie die Präferenz im LocalStorage für persistente Einstellungen!</p>
+
+        <pre class="line-numbers"><code class="language-csharp">await localStorage.SetItemAsync("darkMode", _isDarkMode);
+_isDarkMode = await localStorage.GetItemAsync&lt;bool&gt;("darkMode");</code></pre>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Extra:</strong> Kombinieren Sie mit System-Präferenzen via <code>prefers-color-scheme</code>!</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="content-wrapper">
+    <div class="content-header">
+        <h2>Tag 2: Blazor Schnee-Animation</h2>
+        <span class="day-badge">🎄 2. Dezember</span>
+    </div>
+
+    <div class="content-body">
+        <p class="intro">Heute wird es festlich! Hier ein kleiner Code-Snippet für fallende Schneeflocken in Ihrer Blazor-App:</p>
+
+        <h3>📝 CSS-Animation</h3>
+        <pre class="line-numbers"><code class="language-css">@keyframes snowfall {
+    0% { transform: translateY(-10vh) translateX(0); }
+    100% { transform: translateY(100vh) translateX(100px); }
+}
+
+.snowflake {
+    position: fixed;
+    top: -10vh;
+    color: white;
+    font-size: 1.5em;
+    animation: snowfall 10s linear infinite;
+}</code></pre>
+
+        <h3>💡 Integration</h3>
+        <p>Kombinieren Sie dies mit <code>@for (int i = 0; i &lt; 20; i++)</code> in Ihrer Razor-Komponente und verteilen Sie die Flocken zufällig über die Breite!</p>
+    </div>
+
+    <div class="content-footer">
+        <p class="hint">💡 <strong>Tipp:</strong> Nutzen Sie <code>Random.Next()</code> für zufällige Positionen und Animationsdauern!</p>
+    </div>
+</div>
