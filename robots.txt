@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://guido-altmann.github.io/sitemap.xml
+Sitemap: https://www.guido-altmann.de/sitemap.xml
